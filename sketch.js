@@ -1,4 +1,3 @@
-
 let colors=["#c9ab62","#dc4826","#a47f4d","#dfa91f","#ed9c4e"]
 let gridSize=100
 
@@ -11,19 +10,19 @@ var xSeed;
 var wSeed;
 var left =0;
 
-
-
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  rs=random(1000)
-  drawingContext.shadowOffsetX = gridSize/10;
-  drawingContext.shadowOffsetY = gridSize/10;
-  drawingContext.shadowBlur = gridSize;
+	canvas = createCanvas(windowWidth, windowHeight);
+	canvas.position(0,0);
+	canvas.style('z-index','-1');
+	rs=random(1000)
+    drawingContext.shadowOffsetX = gridSize/10;
+    drawingContext.shadowOffsetY = gridSize/10;
+    drawingContext.shadowBlur = gridSize;
 
   pixelDensity(1);
 	img = createGraphics(width,height);
 	xSeed = round(0.6*width);
-  wSeed = width-xSeed;
+    wSeed = width-xSeed;
 	img.pixelDensity(1);
 	img.fill(0);
 	img.noStroke();
@@ -35,7 +34,7 @@ function setup() {
 	}
 	image(img,0,0);
 	filter(THRESHOLD);
-  setFrameRate(60);
+    setFrameRate(60);
 	loadPixels();
 }
 
